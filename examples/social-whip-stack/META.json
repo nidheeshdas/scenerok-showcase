@@ -1,0 +1,21 @@
+{
+  "id": "social-whip-stack",
+  "category": "social",
+  "title": "Whip Stack Follow Reel",
+  "description": "A 16-second vertical social reel: YouTube subscribe → TikTok follow → X post, chained with whip_pan and chromatic_split — transition montage as the visual argument.",
+  "useCase": "Creator outros, cross-platform follow campaigns, Shorts/Reels",
+  "techniques": [
+    "transitions-montage",
+    "hyperframes-catalog"
+  ],
+  "durationSeconds": 16,
+  "aspect": "9:16",
+  "sourceLanguage": "vidscript",
+  "tags": [
+    "social",
+    "vertical",
+    "whip",
+    "transitions",
+    "16s"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "id": "broadcast-custom-lt",
+  "category": "broadcast",
+  "title": "Custom Lower Third Package",
+  "description": "A 18-second broadcast package: news ticker → custom GSAP lower third → dissolve into a clean bar nameplate.",
+  "useCase": "News packages, webinar openers, live-stream graphics",
+  "techniques": [
+    "custom-html",
+    "hyperframes-catalog"
+  ],
+  "durationSeconds": 18,
+  "aspect": "16:9",
+  "sourceLanguage": "vidscript",
+  "tags": [
+    "broadcast",
+    "custom-html",
+    "ticker",
+    "lower-third",
+    "18s"
+  ]
+}

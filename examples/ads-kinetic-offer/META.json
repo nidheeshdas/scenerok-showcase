@@ -1,0 +1,21 @@
+{
+  "id": "ads-kinetic-offer",
+  "category": "ads",
+  "title": "Kinetic Offer Card",
+  "description": "A 20-second performance ad: custom GSAP offer card blooms, whip-pans into a compile beat, then logo outro. Shows custom HTML + transitions without lifestyle B-roll.",
+  "useCase": "Performance ads, flash sales, agency variant shells",
+  "techniques": [
+    "custom-html",
+    "transitions-montage"
+  ],
+  "durationSeconds": 20,
+  "aspect": "16:9",
+  "sourceLanguage": "vidscript",
+  "tags": [
+    "ads",
+    "custom-html",
+    "transitions",
+    "kinetic",
+    "20s"
+  ]
+}

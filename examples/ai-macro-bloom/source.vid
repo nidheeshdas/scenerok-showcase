@@ -1,0 +1,44 @@
+#meta category: ai
+#meta title: Macro Bloom Brand Film
+#meta description: A 24-second AI brand film: macro circuit bloom → aerial night city → abstract phosphor grid, each clip from a rich xAI imagine prompt, cut with light_leak and cinematic_zoom. No laptop B-roll.
+#meta useCase: Brand films, AI capability proof, launch hero reels
+#meta tags: ai, xai, imagine, brand-film, 24s
+#meta techniques: xai-imagine, transitions-montage
+#meta aspect: 16:9
+#meta duration: 24
+#meta sourceUrl: https://github.com/nidheeshdas/scenerok-showcase/tree/main/examples/ai-macro-bloom
+
+import animations from "@scenerok/animations"
+import tr from "@scenerok/transitions"
+import motion from "@scenerok/basic-animations"
+import xai from "@scenerok/xai"
+
+let clip1 = xai.imagine("Extreme macro of a glowing green phosphor circuit trace blooming across matte black silicon, cool rim light, shallow depth of field, slow push-in, tactile metallic texture, cinematic tech, no text, no words, no letters, no captions, no logos, no watermark, no readable UI copy", duration: 5, aspect_ratio: "16:9")
+let clip2 = xai.imagine("Aerial night flight over a dense megacity grid of cool cyan and indigo lights, long exposure light trails on freeways, slight orbital camera drift, crisp digital cinema look, no text, no words, no letters, no captions, no logos, no watermark, no readable UI copy", duration: 5, aspect_ratio: "16:9")
+let clip3 = xai.imagine("Abstract volumetric phosphor green particles assembling into a luminous grid inside a vast dark void, soft volumetric god rays, slow orbiting camera, high contrast, geometric and precise, no text, no words, no letters, no captions, no logos, no watermark, no readable UI copy", duration: 5, aspect_ratio: "16:9")
+
+[0s .. 5s] = video clip1
+[0.8s .. 4.4s] = text "Not a prompt soup.", font: "Inter Bold", size: 64, color: "#FFFFFF", x: "50%", y: "82%", align: center, stroke: "#000000", stroke_width: 3, animate: [motion.fadeIn(0.4s), motion.fadeOut(0.4s)]
+
+[5s .. 5.6s] = tr.light_leak()
+
+[5.6s .. 10.6s] = video clip2
+[6.2s .. 10s] = text "A written destination.", font: "Inter Bold", size: 60, color: "#00FF88", x: "50%", y: "82%", align: center, stroke: "#000000", stroke_width: 3, animate: [motion.fadeIn(0.4s), motion.fadeOut(0.4s)]
+
+[10.6s .. 11.2s] = tr.cinematic_zoom()
+
+[11.2s .. 16.2s] = video clip3
+[11.8s .. 15.6s] = text "Every frame declared first.", font: "Inter Bold", size: 58, color: "#FFFFFF", x: "50%", y: "82%", align: center, stroke: "#000000", stroke_width: 3, animate: [motion.fadeIn(0.4s), motion.fadeOut(0.4s)]
+
+[16.2s .. 16.8s] = tr.dissolve()
+
+[16.8s .. 21.8s] = animations.code_particle_assemble(code: "video xai.imagine(...)")
+[17.4s .. 21.2s] = text "The script is the film.", font: "Inter Bold", size: 56, color: "#F8FAFC", x: "50%", y: "86%", align: center, stroke: "#000000", stroke_width: 3, animate: [motion.fadeIn(0.35s), motion.fadeOut(0.35s)]
+
+[21.8s .. 22.3s] = tr.dissolve()
+
+[22.3s .. 24s] = animations.logo_outro(tagline: "Programmable video.", url: "scenerok.com")
+
+[-] = audio xai.tts("SceneRok. You write the destination. The model fills the frame. Diff the next cut.", voice: "eve")
+
+output to "ai-macro-bloom.mp4", resolution: "1920x1080", fps: 30, background: "#050816"

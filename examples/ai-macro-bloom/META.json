@@ -1,0 +1,21 @@
+{
+  "id": "ai-macro-bloom",
+  "category": "ai",
+  "title": "Macro Bloom Brand Film",
+  "description": "A 24-second AI brand film: macro circuit bloom → aerial night city → abstract phosphor grid, each clip from a rich xAI imagine prompt, cut with light_leak and cinematic_zoom. No laptop B-roll.",
+  "useCase": "Brand films, AI capability proof, launch hero reels",
+  "techniques": [
+    "xai-imagine",
+    "transitions-montage"
+  ],
+  "durationSeconds": 24,
+  "aspect": "16:9",
+  "sourceLanguage": "vidscript",
+  "tags": [
+    "ai",
+    "xai",
+    "imagine",
+    "brand-film",
+    "24s"
+  ]
+}

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, height=1080" />
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+    #stage { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; }
+    #kicker { font: 500 28px "JetBrains Mono", monospace; color: #00FF88; letter-spacing: 0.12em; text-transform: uppercase; opacity: 0; }
+    #offer { font: 900 120px "Space Grotesk", system-ui; color: #FFFFFF; text-align: center; line-height: 0.95; opacity: 0; transform: translateY(40px); }
+    #sub { font: 500 36px "Space Grotesk", system-ui; color: #8B949E; opacity: 0; }
+    #bar { width: 0; height: 4px; background: #00FF88; border-radius: 2px; margin-top: 12px; }
+  </style>
+</head>
+<body>
+  <div id="stage">
+    <div id="kicker"></div>
+    <div id="offer"></div>
+    <div id="sub"></div>
+    <div id="bar"></div>
+  </div>
+  <script>
+    (function () {
+      var B = window.__BLOCK || {};
+      document.getElementById('kicker').textContent = B.kicker || 'LIMITED';
+      document.getElementById('offer').textContent = B.offer || '50% OFF';
+      document.getElementById('sub').textContent = B.sub || 'One line. New ad.';
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      tl.to('#kicker', { opacity: 1, duration: 0.4, ease: 'power2.out' }, 0);
+      tl.to('#offer', { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, 0.15);
+      tl.to('#sub', { opacity: 1, duration: 0.5, ease: 'power2.out' }, 0.45);
+      tl.to('#bar', { width: 420, duration: 1.2, ease: 'power2.inOut' }, 0.6);
+      tl.to('#offer', { letterSpacing: '4px', duration: 2.5, ease: 'none' }, 1.0);
+      window.__timelines['custom-html'] = tl;
+      if (typeof window.__HF_DURATION === 'undefined') tl.play();
+    })();
+  </script>
+</body>
+</html>

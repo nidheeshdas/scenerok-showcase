@@ -1,0 +1,30 @@
+#meta category: broadcast
+#meta title: Custom Lower Third Package
+#meta description: A 18-second broadcast package: news ticker → custom GSAP lower third → dissolve into a clean bar nameplate.
+#meta useCase: News packages, webinar openers, live-stream graphics
+#meta tags: broadcast, custom-html, ticker, lower-third, 18s
+#meta techniques: custom-html, hyperframes-catalog
+#meta aspect: 16:9
+#meta duration: 18
+#meta sourceUrl: https://github.com/nidheeshdas/scenerok-showcase/tree/main/examples/broadcast-custom-lt
+
+import animations from "@scenerok/animations"
+import tr from "@scenerok/transitions"
+import motion from "@scenerok/basic-animations"
+
+[0s .. 5s] = animations.news_ticker(headline: "Video became source code", desk: "Tech Desk", time: "15:30 UTC", ticker: "SceneRok ships programmable video · Agents write VidScript · Diff your next ad")
+[1s .. 4.5s] = text "Breaking: video became source code.", font: "Inter Bold", size: 52, color: "#FFFFFF", x: "50%", y: "40%", align: center, stroke: "#000000", stroke_width: 3, animate: [motion.fadeIn(0.4s), motion.fadeOut(0.4s)]
+
+[5s .. 5.55s] = tr.dissolve()
+
+[5.55s .. 11.55s] = animations.custom_html(src: "./broadcast-custom-lt/lower-third.html", role: "Founder · SceneRok", name: "Nidheesh Das")
+
+[11.55s .. 12.1s] = tr.push(direction: "up")
+
+[12.1s .. 16.1s] = animations.lt_clean_bar(title: "Programmable Video", subtitle: "scenerok.com")
+
+[16.1s .. 16.55s] = tr.dissolve()
+
+[16.55s .. 18s] = animations.lower_third(title: "SceneRok", subtitle: "Broadcast graphics from text")
+
+output to "broadcast-custom-lt.mp4", resolution: "1920x1080", fps: 30, background: "#0D1117"

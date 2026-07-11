@@ -1,0 +1,20 @@
+{
+  "id": "product-glass-micro",
+  "category": "product",
+  "title": "Glass Micro Interaction",
+  "description": "A 16-second product UI reel: custom GSAP glass pill micro-motion → liquid glass notification → macOS banner, showing HTML craft beside catalog UI blocks.",
+  "useCase": "App marketing, UI feature reveals, product launch shorts",
+  "techniques": [
+    "custom-html",
+    "hyperframes-catalog"
+  ],
+  "durationSeconds": 16,
+  "aspect": "9:16",
+  "sourceLanguage": "vidscript",
+  "tags": [
+    "product",
+    "custom-html",
+    "liquid-glass",
+    "16s"
+  ]
+}

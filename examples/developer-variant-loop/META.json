@@ -1,0 +1,21 @@
+{
+  "id": "developer-variant-loop",
+  "category": "developer",
+  "title": "Variant Loop (SDK)",
+  "description": "A 18-second developer demo authored in @scenerok/sdk — a loop stamps five hook variants with transitions, proving procedural timelines agents can write in TypeScript.",
+  "useCase": "Agent-authored video, developer demos, programmable variant factories",
+  "techniques": [
+    "sdk-procedural",
+    "transitions-montage"
+  ],
+  "durationSeconds": 18,
+  "aspect": "16:9",
+  "sourceLanguage": "typescript",
+  "tags": [
+    "developer",
+    "sdk",
+    "procedural",
+    "loops",
+    "18s"
+  ]
+}

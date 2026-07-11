@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=1920, height=1080" />
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 1920px; height: 1080px; overflow: hidden; background: transparent; }
+    #lt { position: absolute; left: 96px; bottom: 120px; display: flex; align-items: stretch; opacity: 0; transform: translateX(-40px); }
+    #rule { width: 6px; background: #8B5CF6; }
+    #copy { padding: 18px 28px; background: rgba(13,17,23,0.92); border: 1px solid rgba(139,92,246,0.35); }
+    #role { font: 600 22px "Space Grotesk", system-ui; color: #8B5CF6; letter-spacing: 0.08em; text-transform: uppercase; }
+    #name { font: 700 48px "Space Grotesk", system-ui; color: #F8FAFC; margin-top: 4px; }
+  </style>
+</head>
+<body>
+  <div id="lt">
+    <div id="rule"></div>
+    <div id="copy">
+      <div id="role"></div>
+      <div id="name"></div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var B = window.__BLOCK || {};
+      document.getElementById('role').textContent = B.role || 'Correspondent';
+      document.getElementById('name').textContent = B.name || 'Alex Rivera';
+      window.__timelines = window.__timelines || {};
+      var tl = gsap.timeline({ paused: true });
+      tl.to('#lt', { opacity: 1, x: 0, duration: 0.55, ease: 'power3.out' }, 0);
+      tl.to('#rule', { scaleY: 1.08, transformOrigin: 'bottom', duration: 2.5, ease: 'none' }, 0.4);
+      window.__timelines['custom-html'] = tl;
+      if (typeof window.__HF_DURATION === 'undefined') tl.play();
+    })();
+  </script>
+</body>
+</html>

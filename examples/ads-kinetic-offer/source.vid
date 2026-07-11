@@ -1,0 +1,33 @@
+#meta category: ads
+#meta title: Kinetic Offer Card
+#meta description: A 20-second performance ad: custom GSAP offer card blooms, whip-pans into a compile beat, then logo outro. Shows custom HTML + transitions without lifestyle B-roll.
+#meta useCase: Performance ads, flash sales, agency variant shells
+#meta tags: ads, custom-html, transitions, kinetic, 20s
+#meta techniques: custom-html, transitions-montage
+#meta aspect: 16:9
+#meta duration: 20
+#meta sourceUrl: https://github.com/nidheeshdas/scenerok-showcase/tree/main/examples/ads-kinetic-offer
+
+import animations from "@scenerok/animations"
+import tr from "@scenerok/transitions"
+import motion from "@scenerok/basic-animations"
+
+# Custom HTML kinetic offer: 6s
+[0s .. 6s] = animations.custom_html(src: "./ads-kinetic-offer/hero.html", kicker: "TODAY ONLY", offer: "Ship 10 ads", sub: "Change one line. New creative.")
+
+[6s .. 6.55s] = tr.whip_pan(direction: "left")
+
+# Proof beat — code typing the offer: 5.5s
+[6.55s .. 12.05s] = animations.code_typing(code: "text \"Ship 10 ads\", style: title", lang: "javascript", filename: "offer.vid")
+[7.2s .. 11.4s] = text "The script is the ad.", font: "Inter Bold", size: 56, color: "#FFFFFF", x: "50%", y: "86%", align: center, stroke: "#000000", stroke_width: 3, animate: [motion.fadeIn(0.4s), motion.fadeOut(0.4s)]
+
+[12.05s .. 12.6s] = tr.glitch()
+
+# Variant flash: 3.5s
+[12.6s .. 16.1s] = text "Fork it. Test it. Ship it.", font: "Inter Bold", size: 72, color: "#00FF88", x: "50%", y: "50%", align: center, stroke: "#000000", stroke_width: 3, animate: [motion.popIn(0.35s), motion.fadeOut(0.4s)]
+
+[16.1s .. 16.55s] = tr.dissolve()
+
+[16.55s .. 20s] = animations.logo_outro(tagline: "Programmable video.", url: "scenerok.com")
+
+output to "ads-kinetic-offer.mp4", resolution: "1920x1080", fps: 30, background: "#0A0A0A"

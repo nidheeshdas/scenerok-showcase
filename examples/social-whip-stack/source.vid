@@ -1,0 +1,30 @@
+#meta category: social
+#meta title: Whip Stack Follow Reel
+#meta description: A 16-second vertical social reel: YouTube subscribe → TikTok follow → X post, chained with whip_pan and chromatic_split — transition montage as the visual argument.
+#meta useCase: Creator outros, cross-platform follow campaigns, Shorts/Reels
+#meta tags: social, vertical, whip, transitions, 16s
+#meta techniques: transitions-montage, hyperframes-catalog
+#meta aspect: 9:16
+#meta duration: 16
+#meta sourceUrl: https://github.com/nidheeshdas/scenerok-showcase/tree/main/examples/social-whip-stack
+
+import animations from "@scenerok/animations"
+import tr from "@scenerok/transitions"
+import motion from "@scenerok/basic-animations"
+
+[0s .. 4.2s] = animations.yt_lower_third(channel: "SceneRok", subscribers: "128K")
+[0.6s .. 3.6s] = text "Follow the build.", font: "Inter Bold", size: 48, color: "#FFFFFF", x: "50%", y: "88%", align: center, stroke: "#000000", stroke_width: 3, animate: [motion.fadeIn(0.3s), motion.fadeOut(0.3s)]
+
+[4.2s .. 4.75s] = tr.whip_pan(direction: "up")
+
+[4.75s .. 8.95s] = animations.tiktok_follow(displayName: "SceneRok", handle: "@scenerok", followers: "42.1K")
+
+[8.95s .. 9.5s] = tr.chromatic_split()
+
+[9.5s .. 13.5s] = animations.x_post(displayName: "SceneRok", handle: "@scenerok", body: "Video is source code now. Write it. Diff it. Ship the variant.")
+
+[13.5s .. 14s] = tr.push(direction: "left")
+
+[14s .. 16s] = animations.lower_third(title: "@scenerok", subtitle: "One file. Every platform.")
+
+output to "social-whip-stack.mp4", resolution: "1080x1920", fps: 30, background: "#050816"

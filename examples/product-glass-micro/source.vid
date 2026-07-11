@@ -1,0 +1,26 @@
+#meta category: product
+#meta title: Glass Micro Interaction
+#meta description: A 16-second product UI reel: custom GSAP glass pill micro-motion → liquid glass notification → macOS banner, showing HTML craft beside catalog UI blocks.
+#meta useCase: App marketing, UI feature reveals, product launch shorts
+#meta tags: product, custom-html, liquid-glass, 16s
+#meta techniques: custom-html, hyperframes-catalog
+#meta aspect: 9:16
+#meta duration: 16
+#meta sourceUrl: https://github.com/nidheeshdas/scenerok-showcase/tree/main/examples/product-glass-micro
+
+import animations from "@scenerok/animations"
+import tr from "@scenerok/transitions"
+import motion from "@scenerok/basic-animations"
+
+[0s .. 5.5s] = animations.custom_html(src: "./product-glass-micro/pill.html", designWidth: 1080, designHeight: 1920, label: "Render complete", hint: "Tap to download MP4")
+[0.8s .. 4.8s] = text "UI motion, authored in HTML.", font: "Inter Bold", size: 40, color: "#E2E8F0", x: "50%", y: "78%", align: center, stroke: "#000000", stroke_width: 2, animate: [motion.fadeIn(0.35s), motion.fadeOut(0.35s)]
+
+[5.5s .. 6.05s] = tr.dissolve()
+
+[6.05s .. 11.55s] = animations.liquid_glass_notification(title: "SceneRok", body: "Variant ready.", messageText: "ads-v12.mp4 finished rendering")
+
+[11.55s .. 12.1s] = tr.push(direction: "up")
+
+[12.1s .. 16s] = animations.macos_notification(appName: "SceneRok", title: "Export complete", body: "Your short is ready to post.")
+
+output to "product-glass-micro.mp4", resolution: "1080x1920", fps: 30, background: "#000000"
