@@ -20,3 +20,7 @@ Each folder contains:
 - `META.json` — category, techniques, duration
 
 These examples are a corpus for humans and agents. Fork a folder, change a line, render a variant.
+
+## Articles
+
+- [Why Your Coding Agent Should Write the Launch Video Too](./articles/programmable-video-vidscript-scenerok.md)
